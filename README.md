@@ -23,12 +23,12 @@ The possible solution is to choose 2nd and 4th subset -> they contain every elem
 
 ## Encoding
 
-The problem is encoded using variable for every subset that we need to work with. It represents if we need to
+The problem is encoded using variable for every subset that we need to work with (from 1 to the number of subsets). It represents if we need to
 include the subset to satisfy exact cover conditions (has value true) or to not include the subset (has value false).
 
 Clauses we need to construct to satisfy the conditions are:
 
-- We need to include every element of $A$: disjunction of every subset that contains the element (at least of 
+- We need to include every element of $A$: disjunction of every subset that contains the element (at least of one
 of the variables must be true -> we need to include at least one subset that includes the element).
 - No chosen subset has size of intersection with any other chosen subset grater than 0: From the previous defined 
 clause we took every two subsets (variables) and need make sure that just on of them will be chosen (otherwise the 
@@ -70,5 +70,5 @@ I have created ["generator"](generator.py) for these instances, you can set numb
 number of subsets and output file (from which ["exact cover"](exact_cover.py) reads). The choosing of contents of
 subsets is random.
 
-Times and satisfiability for instances in folder ./instances can be seen in description of these instances above. Time
+Times and satisfiability for instances in folder ["./intances"](./instances) can be seen in description of these instances above. Time
 depends mainly on number of subsets, but also on number of elements. 
